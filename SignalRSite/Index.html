@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Stock</title>
+	<meta charset="utf-8" />
+    <style type="text/css">
+        .name {
+            display: inline-block;
+            width: 100px;
+        }
+        .amount {
+            display: inline-block;
+            text-align: center;
+            width: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Stock</h1>
+    <div data-bind="foreach: stock">
+        <span class="name" data-bind="text: name"></span>
+        <button data-bind="click: $root.decrement">-</button>
+        <span class="amount" data-bind="text: amount"></span>
+        <button data-bind="click: $root.increment">+</button><br />
+    </div>
+    <script src="/Scripts/jquery-2.2.3.js"></script>
+    <script src="/Scripts/jquery.signalR-2.2.0.min.js"></script>
+    <script src="/signalr/hubs"></script>
+    <script src="/Scripts/knockout-3.4.0.debug.js"></script>
+    <script src="/Scripts/Index.js"></script>
+</body>
+</html>
